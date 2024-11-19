@@ -77,7 +77,7 @@ In Example2/index.html, your task is to fill in the missing JavaScript code to a
 You want to give the user a clear prompt above the dropdown. This is just a descriptive word to indicate what the user is choosing.
 Fill in the blank:
 ```html
-<h1>Choose a ????A????</h1>
+<h1>Choose a fruit</h1>
 ```
 🗝️ Hint: Think of what kind of options you might put in a dropdown, such as "fruit", "color", "sport" or "car". 
 
@@ -85,21 +85,21 @@ Fill in the blank:
 In HTML, use the appropriate tag to include JavaScript code. This tag tells the browser that what follows is JavaScript.
 Fill in the blank:
 ```html
-????B????
+<scirpt>
 ```
 
 #### 📝 Step 3: Fetching Data from a Text File
 The fetch() function is used to request resources. Here, you want to fetch a file named options.txt that is in the same directory as your HTML file.
 Fill in the blank:
 ```javascript
-fetch(????C????)
+fetch('option.txt')
 ```
 
 #### 📝 Step 4: Getting a Reference to the Dropdown Menu
 Use JavaScript to select the dropdown element by its id so that you can dynamically populate it with options.
 Fill in the blank:
 ```javascript
-const dropdown = ????D????
+const dropdown = document.getElementById('dropdown');
 ```
 🗝️ Hint: Use `document.getElementById('id')` to get the dropdown element. 
 
@@ -108,8 +108,8 @@ When creating each option element, set its value attribute to those read from th
 You also need to set the text that will appear inside the dropdown.
 Fill in the blanks:
 ```javascript
-optionElement.value = ????E????;
-optionElement.textContent = ????F????;
+optionElement.value = option;
+optionElement.textContent = option;
 ```
 🗝️ Hint: The value and text content should both be the option string from the text file. 
 
@@ -117,7 +117,7 @@ optionElement.textContent = ????F????;
 Add the newly created option to the dropdown menu.
 Fill in the blanks:
 ```javascript
-????G????.appendChild(????H????);
+dropdown.appendChild(optionElement);
 ```
 🗝️ Hint: You want to append the newly created option element to the dropdown element.
 
@@ -125,7 +125,7 @@ Fill in the blanks:
 You need to get the value of the currently selected option in the dropdown.
 Fill in the blank:
 ```javascript
-const selectedOption = document.????I????.value;
+const selectedOption = document.getElementById('dropdown').value;
 ```
 🗝️ Hint: Use `getElementById('id')` to access the dropdown and get its `value`. 
 
@@ -133,7 +133,7 @@ const selectedOption = document.????I????.value;
 You need to get the HTML element with the id of "output" to display the history.
 Fill in the blank:
 ```javascript
-????J????
+const output = document.getElementById('output');
 ```
 🗝️ Hint Use const with the name to define a variable and `document.getElementById('id')` to get the element. 
 
@@ -141,7 +141,7 @@ Fill in the blank:
 Create a new paragraph element and add it to the "output" div to show the user's selection.
 Fill in the blank:
 ```javascript
-????K????
+output.appendChild(newEntry);
 ```
 🗝️ Hint: Use `appendChild(x)` to add x to the element. 
 
